@@ -35,11 +35,7 @@ const IndexPage = () => (
         alt=""
         style={{ marginBottom: `var(--space-3)` }}
       />
-    </div>
-    <div className={styles.textStart}>
-      <h1>
-        <TypeAnimation />
-      </h1>
+      <TypeAnimation />
     </div>
     <div className={styles.textCenter}>
     {moreLinks.map((link, i) => (

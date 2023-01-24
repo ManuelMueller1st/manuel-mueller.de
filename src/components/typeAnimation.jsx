@@ -3,9 +3,9 @@ import Typical from 'react-typical'
 
 
 const steps = [
-  '$ Hello 👋 my name is Manuel', 1000,
-  '$ I am a Cloud Consultant', 1000,
-  '$ Vist me on social media 👇'
+  'Hello 👋 my name is Manuel', 1000,
+  'I am a Cloud Consultant', 1000,
+  'Vist me on social media 👇'
 ];
 export default class App extends Component {
   render () {
