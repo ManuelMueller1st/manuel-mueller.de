@@ -48,6 +48,10 @@
   text-align: center;
 }
 
+.textStart {
+text-align: start;
+}
+
 .intro {
   max-width: none;
   line-height: var(--line-height-loose);
