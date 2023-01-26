@@ -5,8 +5,21 @@
  * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
  */
 
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import PropTypes from 'prop-types';
+import * as React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+
+const propTypes = {
+  description: PropTypes.string,
+  title: PropTypes.string,
+  children: PropTypes.arrayOf(PropTypes.string),
+};
+
+const defaultProps = {
+  description: '',
+  title: '',
+  children: [],
+};
 
 function Seo({ description, title, children }) {
   const { site } = useStaticQuery(
@@ -20,11 +33,11 @@ function Seo({ description, title, children }) {
           }
         }
       }
-    `
-  )
+    `,
+  );
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const metaDescription = description || site.siteMetadata.description;
+  const defaultTitle = site.siteMetadata?.title;
 
   return (
     <>
@@ -34,12 +47,15 @@ function Seo({ description, title, children }) {
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
+      <meta name="twitter:creator" content={site.siteMetadata?.author || ''} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
       {children}
     </>
-  )
+  );
 }
 
-export default Seo
+Seo.propTypes = propTypes;
+Seo.defaultProps = defaultProps;
+
+export default Seo;

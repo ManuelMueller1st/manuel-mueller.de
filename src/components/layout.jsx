@@ -5,11 +5,20 @@
  * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
  */
 
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import PropTypes from 'prop-types';
+import * as React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from "./header"
-import "./layout.css"
+import Header from './header';
+import './layout.css';
+
+const propTypes = {
+  children: PropTypes.arrayOf(PropTypes.string),
+};
+
+const defaultProps = {
+  children: [],
+};
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -20,7 +29,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
@@ -45,7 +54,10 @@ const Layout = ({ children }) => {
         </footer>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+Layout.propTypes = propTypes;
+Layout.defaultProps = defaultProps;
+
+export default Layout;
