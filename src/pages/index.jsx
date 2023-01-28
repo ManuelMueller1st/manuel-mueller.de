@@ -19,6 +19,10 @@ const moreLinks = [
     text: 'GitHub',
     url: 'https://github.com/ManuelMueller1st',
   },
+  {
+    text: 'Credly',
+    url: 'https://www.credly.com/users/manuel-muller',
+  },
 ];
 
 const utmParameters = '?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter';
