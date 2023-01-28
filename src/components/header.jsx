@@ -10,27 +10,29 @@ const defaultProps = {
   siteTitle: [],
 };
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      margin: `0 auto`,
-      padding: `var(--space-4) var(--size-gutter)`,
-      display: `flex`,
-      alignItems: `center`,
-      justifyContent: `space-between`,
-    }}
-  >
-    <Link
-      to="/"
+function Header({ siteTitle }) {
+  return (
+    <header
       style={{
-        fontSize: `var(--font-sm)`,
-        textDecoration: `none`,
+        margin: '0 auto',
+        padding: 'var(--space-4) var(--size-gutter)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
       }}
     >
-      {siteTitle}
-    </Link>
-  </header>
-);
+      <Link
+        to="/"
+        style={{
+          fontSize: 'var(--font-sm)',
+          textDecoration: 'none',
+        }}
+      >
+        {siteTitle}
+      </Link>
+    </header>
+  );
+}
 
 Header.propTypes = propTypes;
 Header.defaultProps = defaultProps;

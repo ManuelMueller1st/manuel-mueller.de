@@ -21,38 +21,42 @@ const moreLinks = [
   },
 ];
 
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`;
+const utmParameters = '?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter';
 
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/me.png"
-        loading="eager"
-        width={160}
-        quality={95}
-        formats={['auto', 'webp', 'avif']}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <TypeAnimation />
-    </div>
-    <div className={styles.textCenter}>
-      {moreLinks.map((link, i) => (
-        <React.Fragment key={link.url}>
-          <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-          {i !== moreLinks.length - 1 && <> · </>}
-        </React.Fragment>
-      ))}
-    </div>
-  </Layout>
-);
+function IndexPage() {
+  return (
+    <Layout>
+      <div className={styles.textCenter}>
+        <StaticImage
+          src="../images/me.png"
+          loading="eager"
+          width={160}
+          quality={95}
+          formats={['auto', 'webp', 'avif']}
+          alt=""
+          style={{ marginBottom: 'var(--space-3)' }}
+        />
+        <TypeAnimation />
+      </div>
+      <div className={styles.textCenter}>
+        {moreLinks.map((link, i) => (
+          <React.Fragment key={link.url}>
+            <a href={`${link.url}${utmParameters}`}>{link.text}</a>
+            {i !== moreLinks.length - 1 && <> · </>}
+          </React.Fragment>
+        ))}
+      </div>
+    </Layout>
+  );
+}
 
 /**
  * Head export to define metadata for the page
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="About me" />;
+export function Head() {
+  return <Seo title="About me" />;
+}
 
 export default IndexPage;
