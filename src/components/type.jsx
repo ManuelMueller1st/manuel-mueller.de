@@ -3,7 +3,7 @@ import * as React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 
 const propTypes = {
-  steps: PropTypes.arrayOf(String),
+  sequence: PropTypes.arrayOf(String),
 };
 
 const defaultProps = {
