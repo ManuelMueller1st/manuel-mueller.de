@@ -3,7 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/layout';
 import Seo from '../components/seo';
-import TypeAnimation from '../components/typeAnimation';
+import Type from '../components/type';
 import * as styles from '../components/index.module.css';
 
 const moreLinks = [
@@ -40,7 +40,7 @@ function IndexPage() {
           alt=""
           style={{ marginBottom: 'var(--space-3)' }}
         />
-        <TypeAnimation />
+        <Type />
       </div>
       <div className={styles.textCenter}>
         {moreLinks.map((link, i) => (

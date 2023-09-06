@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import Typical from 'react-typical';
+import { TypeAnimation } from 'react-type-animation';
 
 const propTypes = {
   steps: PropTypes.arrayOf(String),
 };
 
 const defaultProps = {
-  steps: [
+  sequence: [
     'Hello 👋 my name is Manuel',
     1000,
     'I am a Cloud Consultant focusing on AWS',
@@ -22,15 +22,15 @@ const defaultProps = {
   ],
 };
 
-function TypeAnimation({ steps }) {
+function Type({ sequence }) {
   return (
     <div>
-      <Typical wrapper="span" steps={steps} loop={1} className="caca" />
+      <TypeAnimation wrapper="span" sequence={sequence} repeat={Infinity} className="caca" />
     </div>
   );
 }
 
-TypeAnimation.propTypes = propTypes;
-TypeAnimation.defaultProps = defaultProps;
+Type.propTypes = propTypes;
+Type.defaultProps = defaultProps;
 
-export default TypeAnimation;
+export default Type;
